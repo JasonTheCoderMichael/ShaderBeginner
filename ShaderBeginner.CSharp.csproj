@@ -82,6 +82,7 @@
     <None Include="Assets\Resource\DiffuseLight_VF\DiffuseLight_Frag.shader" />
     <None Include="Assets\Resource\DiffuseLight_VF\DiffuseLight_Vert.shader" />
     <None Include="Assets\Resource\DiffuseLight_VF\Specular_Frag.shader" />
+    <None Include="Assets\Resource\DoubleSide\DoubleSide.shader" />
     <None Include="Assets\Resource\Fog\Fog.shader" />
     <None Include="Assets\Resource\MainTex_ST\MainTex_ST.shader" />
     <None Include="Assets\Resource\Shadow\Shadow.shader" />
