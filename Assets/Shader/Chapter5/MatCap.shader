@@ -2,7 +2,11 @@
 {
 	Properties 
 	{
+<<<<<<< HEAD
 		_MainTex("Main Texture", 2D) = "white"{}
+=======
+		_MainTex("Main Texture", 2D) = ""{}
+>>>>>>> aecb5c33f74ccc95611b97ddb285685946659ca7
 		_MainTint("Main Tint", Color) = (1,1,1,1)
 		_NormalMap("Normal Map", 2D) = "bump"{}
 	}
