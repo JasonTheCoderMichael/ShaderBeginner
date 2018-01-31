@@ -1,4 +1,4 @@
-Shader "FFD/shadow1"
+Shader "FFD/Shadow"
 {
     Properties
     {
@@ -49,5 +49,5 @@ Shader "FFD/shadow1"
             ENDCG
         }
     }
-    FallBack "Specular"
+    // FallBack "Specular"
 }

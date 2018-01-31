@@ -47,5 +47,5 @@ Shader "CWH/Shadow"
 			ENDCG
 		}
 	}
-	FallBack "Diffuse"
+	// FallBack "Diffuse"
 }

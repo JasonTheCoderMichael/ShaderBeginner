@@ -69,6 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\JMO Assets\MatCap Shaders\Demo\Assets\MC_AutoRotate.cs" />
+    <Compile Include="Assets\JMO Assets\MatCap Shaders\Demo\Assets\MC_SwitchTexture.cs" />
     <Compile Include="Assets\Scripts\NightVisionEffect.cs" />
     <Compile Include="Assets\Scripts\ObjectRenderQueue.cs" />
     <Compile Include="Assets\Scripts\OldFilmEffect.cs" />
@@ -81,6 +83,19 @@
     <Compile Include="Assets\Scripts\test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Lit.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Additive.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_AdditiveZ.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Bumped.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureAdd.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureAdd_Bumped.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureMult.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_TextureMult_Bumped.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Textures\BenSimonds\_Textures Readme.txt" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Textures\MaCrea\MaCrea.txt" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\_MatCap Shaders Readme.txt" />
     <None Include="Assets\Resource\DiffuseLight_VF\DiffuseLight_Frag.shader" />
     <None Include="Assets\Resource\DiffuseLight_VF\DiffuseLight_Vert.shader" />
     <None Include="Assets\Resource\DiffuseLight_VF\Specular_Frag.shader" />
@@ -88,9 +103,9 @@
     <None Include="Assets\Resource\Fog\Fog.shader" />
     <None Include="Assets\Resource\MainTex_ST\MainTex_ST.shader" />
     <None Include="Assets\Resource\RimLight\RimLight.shader" />
+    <None Include="Assets\Resource\Shadow\CWH_Shadow.shader" />
+    <None Include="Assets\Resource\Shadow\FFD_Shadow.shader" />
     <None Include="Assets\Resource\Shadow\Shadow.shader" />
-    <None Include="Assets\Resource\Shadow\Test.shader" />
-    <None Include="Assets\Resource\Shadow\test2.shader" />
     <None Include="Assets\Resource\VertexAnimation\VertexAnimation.shader" />
     <None Include="Assets\Shader\AnimateVertex\AnimateVertex.shader" />
     <None Include="Assets\Shader\AnisotropicSpecular.shader" />
