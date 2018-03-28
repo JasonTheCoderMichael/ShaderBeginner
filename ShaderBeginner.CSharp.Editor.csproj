@@ -120,6 +120,7 @@
     <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
     <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Lit.shader" />
     <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain.shader" />
+    <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain2.shader" />
     <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Additive.shader" />
     <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_AdditiveZ.shader" />
     <None Include="Assets\JMO Assets\MatCap Shaders\Shaders\MatCap_Plain_Bumped.shader" />
@@ -137,6 +138,7 @@
     <None Include="Assets\Resource\Fog\Fog.shader" />
     <None Include="Assets\Resource\MainTex_ST\MainTex_ST.shader" />
     <None Include="Assets\Resource\RimLight\RimLight.shader" />
+    <None Include="Assets\Resource\ScreenEffect\PostEffect.shader" />
     <None Include="Assets\Resource\Shadow\CWH_Shadow.shader" />
     <None Include="Assets\Resource\Shadow\FFD_Shadow.shader" />
     <None Include="Assets\Resource\Shadow\Shadow.shader" />
