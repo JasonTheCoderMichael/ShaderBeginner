@@ -2,6 +2,3 @@ build/
 obj/
 Library/
 Temp/
-*.csproj
-*.sln
-*.suo

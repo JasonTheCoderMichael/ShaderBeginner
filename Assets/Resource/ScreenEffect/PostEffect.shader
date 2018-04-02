@@ -1,4 +1,4 @@
-﻿Shader "MJ/PostEffect" 
+﻿Shader "MJ/PostEffect/Overlay" 
 {
 	Properties
 	{
