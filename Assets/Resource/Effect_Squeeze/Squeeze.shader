@@ -55,14 +55,21 @@
 				float2 curPixelScreenPos = i.uv * _MainTex_TexelSize.zw;
 				float distance = length(curPixelScreenPos - centerScreenPos);
 				float4 finalColor;
-				if(distance > radius)
-				{
-					finalColor = float4(0,0,0,1);
-				}
-				else
-				{
-					finalColor = tex2D(_MainTex, i.uv);
-				}				
+
+				// 方式1 //
+				// if(distance > radius)
+				// {
+				// 	finalColor = float4(0,0,0,1);
+				// }
+				// else
+				// {
+				// 	finalColor = tex2D(_MainTex, i.uv);
+				// }			
+
+				// 方式2, 不使用if判断，执行速度会更快一点点 //
+				float4 texColor = tex2D(_MainTex, i.uv);
+				float stepValue = step(radius, distance);
+				finalColor = stepValue * float4(0,0,0,1) + (1 - stepValue) * texColor;
 
 				return finalColor;
 			}
