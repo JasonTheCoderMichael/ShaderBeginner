@@ -141,7 +141,9 @@
     <None Include="Assets\Resource\Fog\Fog.shader" />
     <None Include="Assets\Resource\Grid\Cicrle.shader" />
     <None Include="Assets\Resource\Grid\Grid.shader" />
+    <None Include="Assets\Resource\LightProbe\LightProbeShader.shader" />
     <None Include="Assets\Resource\MainTex_ST\MainTex_ST.shader" />
+    <None Include="Assets\Resource\MultiCompile\MultiCompile.shader" />
     <None Include="Assets\Resource\ReplaceShader\Diffuse.shader" />
     <None Include="Assets\Resource\ReplaceShader\ReplaceShader.shader" />
     <None Include="Assets\Resource\RimLight\RimLight.shader" />
@@ -149,6 +151,7 @@
     <None Include="Assets\Resource\Shadow\CWH_Shadow.shader" />
     <None Include="Assets\Resource\Shadow\FFD_Shadow.shader" />
     <None Include="Assets\Resource\Shadow\Shadow.shader" />
+    <None Include="Assets\Resource\Test\Test.shader" />
     <None Include="Assets\Resource\VertexAnimation\VertexAnimation.shader" />
     <None Include="Assets\Shader\AnimateVertex\AnimateVertex.shader" />
     <None Include="Assets\Shader\AnisotropicSpecular.shader" />

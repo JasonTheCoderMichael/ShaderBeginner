@@ -1,7 +1,8 @@
-﻿Shader "MJ/Medium/Circle"
+﻿Shader "MJ/Medium/FundamentalMath"
 {
 	Properties
-	{		
+	{	
+		_CloudColor("Cloud Color", Color) = (1,1,1,1)	
 		_Color("Color", Color) = (1,1,1,1)		
 	}
 
@@ -14,6 +15,7 @@
 			CGPROGRAM					
 
 			float4 _Color;		
+			float4 _CloudColor;
 
 			#pragma vertex vert
 			#pragma fragment frag			
@@ -69,7 +71,67 @@
 			{
 				uv -= center;
 				float len = length(uv);
+				return step(len,radius);
+			}
+
+			// float4 DrawCircle(float2 uv, float2 center, float radius)
+			// {
+			// 	uv -= center;
+			// 	uv /= radius;
+			// 	float len = length(uv);
+			// 	return step(len, 1)*_Color;
+			// }
+
+			float4 DrawBouncingCircle(float2 uv, float2 center, float radius)
+			{
+				uv -= center + float2(0, abs(sin(_Time.y))*0.5);
+				float len = length(uv);
 				return step(len,radius)*_Color;
+			}
+
+			float4 DrawCloud(float2 uv, float2 center)
+			{				
+				float4 col = float4(0,0,0,0);
+				float circleSize = 0.02;	
+				col += DrawCircle(uv, center + float2(0, 0), circleSize);
+				col += DrawCircle(uv, center + float2(0.01, 0.01), circleSize);
+				col += DrawCircle(uv, center + float2(0.03, 0.015), circleSize);
+				col += DrawCircle(uv, center + float2(0.05, 0.005), circleSize);
+				col += DrawCircle(uv, center + float2(0.04, 0), circleSize);
+				col += DrawCircle(uv, center + float2(0.035, -0.01), circleSize);
+				col += DrawCircle(uv, center + float2(0.015, -0.01), circleSize);
+				
+				col = step(_CloudColor, col) * _CloudColor;			
+				return col;
+			}
+
+			float4 DrawClouds(float2 uv)
+			{
+				float4 col = float4(0,0,0,0);
+				col += DrawCloud(uv, float2(0.1, 0.7));
+				col += DrawCloud(uv, float2(0.3, 0.8));
+				col += DrawCloud(uv, float2(0.5, 0.7));								
+				col += DrawCloud(uv, float2(0.7, 0.8));
+				
+				return col;
+			}
+
+			float4 AngleCircle2(float2 uv, float2 center, float size)
+			{
+				uv -= center;
+				float deg = atan2(uv.y, uv.x) + _Time.y;
+				float len = length(uv);
+				float offset = abs(sin(deg*4))*0.2*size;
+				float4 col = smoothstep(size+offset+0.05, size+offset, len);
+				return col;
+			}
+
+			float4 DrawSun(float2 uv, float2 center, float2 size)
+			{
+				float4 haloColor = AngleCircle2(uv, center, size) * float4(1,1,0,1);
+				float4 sunColor = DrawCircle(uv, center, 0.9*size) * float4(1,0,0,1);
+				float4 finalColor = lerp(haloColor, sunColor, sunColor.r);
+				return finalColor;
 			}
 
 			v2f vert(a2v v)
@@ -82,8 +144,15 @@
 
 			float4 frag(v2f i) :SV_TARGET
 			{				
-				// return DrawCircle(i.uv, float2(0.3, 0.3), 0.2);				
-				return DrawFlower(i.uv, float2(0.5, 0.5), 0.3);
+				// return DrawCircle(i.uv, float2(0.5, 0.5), 0.1);
+				// return DrawFlower(i.uv, float2(0.5, 0.5), 0.3);
+				// return DrawBouncingCircle(i.uv, float2(0.5, 0), 0.2);
+				
+				float4 col = float4(0,0,0,0);
+				col += DrawClouds(frac(i.uv+float2(_Time.x, 0)));
+
+				col += DrawSun(i.uv, float2(0.85, 0.85), 0.05);
+				return col;
 			}
 			
 			ENDCG
