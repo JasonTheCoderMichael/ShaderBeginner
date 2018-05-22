@@ -141,7 +141,10 @@
     <None Include="Assets\Resource\Fog\Fog.shader" />
     <None Include="Assets\Resource\Grid\Cicrle.shader" />
     <None Include="Assets\Resource\Grid\Grid.shader" />
+    <None Include="Assets\Resource\LOD\LODShader.shader" />
+    <None Include="Assets\Resource\LightProbe\LightMap.shader" />
     <None Include="Assets\Resource\LightProbe\LightProbeShader.shader" />
+    <None Include="Assets\Resource\LightProbe\VF_Diffuse.shader" />
     <None Include="Assets\Resource\MainTex_ST\MainTex_ST.shader" />
     <None Include="Assets\Resource\MultiCompile\MultiCompile.shader" />
     <None Include="Assets\Resource\ReplaceShader\Diffuse.shader" />

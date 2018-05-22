@@ -8,7 +8,7 @@
 	SubShader
 	{
 		// 一定要加上 "LightMode"="ForwardBase"  //
-		Tags{"LightMode"="ForwardBase"}
+		Tags{"Queue"="Geometry" "LightMode"="ForwardBase" "RenderType"="Opaque"}
 		
 		pass
 		{
@@ -40,8 +40,10 @@
 				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
 
-				float3 worldNormal = mul((float3x3)_Object2World, v.normal);
-				// float3 worldNormal = mul(UNITY_MATRIX_IT_MV, v.normal);				
+				// 在物体不是同一缩放时可以对比下两种转换法线的效果 //
+				// 只要物体scale 不是 (1,1,1), 用UNITY_MATRIX_IT_MV 转换发现的效果就好于用 _Object2World 转换的方式 //
+				// float3 worldNormal = mul((float3x3)_Object2World, v.normal);
+				float3 worldNormal = mul(UNITY_MATRIX_IT_MV, v.normal);
 				o.probeColor = ShadeSH9(float4(worldNormal, 1));
 				return o;
 			}
